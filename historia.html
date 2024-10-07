@@ -12,6 +12,7 @@
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
+            transition: opacity 0.5s ease; /* Transição suave */
         }
         
         /* Cabeçalho */
@@ -117,16 +118,23 @@
             margin-top: 40px;
         }
     </style>
+    <script>
+        // Função para aplicar a transição de fade
+        window.onload = function() {
+            document.body.style.opacity = "1"; // Define a opacidade do corpo para 1 ao carregar
+        };
+    </script>
 </head>
-<body>
+<body style="opacity: 0;"> <!-- Inicia com opacidade 0 para efeito de fade -->
 
-    <!-- testando alteracoes -oh alteracoes como sao altwradas minhas alteracoes-->
     <!-- Cabeçalho padrão -->
     <header>
         <a href="botafogo.html" style="text-decoration: none; color: #fff;">
-            <img src="botalogo.jpg" alt="Logo Botafogo">
+            <img src="botalogo.png" alt="Logo Botafogo"> <!-- Logo alterada para botalogo.png -->
         </a>
-        <h1>Botafogo de Futebol e Regatas</h1>
+        <a href="botafogo.html" style="text-decoration: none; color: #f1a205;">
+            <h1>Botafogo de Futebol e Regatas</h1> <!-- Título agora é um link para botafogo.html -->
+        </a>
         <nav>
             <a href="historia.html">História</a>
             <a href="#conquistas">Conquistas</a>
@@ -173,20 +181,18 @@
 
             <h2>Tetracampeonato</h2>
             <p>
-                Nas décadas de 1910 e 1920 o clube viveu uma entressafra, e só voltaria a conquistar o Campeonato Carioca na década de 30. No entanto, seu retorno ao topo foi triunfal, pois conquistaria o até hoje inédito tetracampeonato carioca, com 4 títulos seguidos, em 32, 33, 34 e 35. Nessa última conquista, o destaque do time foi Leônidas da Silva.
+                Em 1968, foi campeão carioca pela 20ª vez e o seu atacante maior, Jairzinho, foi o artilheiro do torneio. O Botafogo conquistou a Taça do Mundo em 1970 ao vencer o Santos por 1 a 0 e, em 1989, conquistou seu tetracampeonato.
             </p>
-
-            <h2>Década de 40</h2>
+            <img src="tetracampeao.jpg" alt="Tetracampeão" class="right"/> <!-- Imagem Tetracampeão -->
             <p>
-                Na década de 40, houve a fusão entre o Club de Regatas Botafogo e o Botafogo Football Club.
+                O Botafogo viveu momentos de glória e penúria no cenário nacional. Se destacou por ter grandes ídolos como Garrincha, que é considerado um dos maiores jogadores de todos os tempos e um dos maiores jogadores da história do Botafogo.
             </p>
         </div>
     </div>
 
-    <!-- Rodapé padrão -->
+    <!-- Rodapé -->
     <footer>
-        <p>&copy; 2024 Botafogo de Futebol e Regatas. Todos os direitos reservados.</p>
+        <p>&copy; 2024 Botafogo de Futebol e Regatas - Todos os direitos reservados</p>
     </footer>
-
 </body>
 </html>
