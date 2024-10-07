@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Botafogo de Futebol e Regatas</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Arquivo de estilos -->
+    <style>
+        body {
+            background-color: #000; /* Fundo preto */
+            color: #fff; /* Texto branco */
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #000; /* Preto no header */
+            padding: 20px;
+            text-align: center;
+            border-bottom: 3px solid #fff;
+        }
+        header img {
+            max-width: 150px; /* Espaço para a logo */
+            display: block;
+            margin: 0 auto;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+        }
+        nav a {
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+            border-radius: 5px;
+        }
+        nav a:hover {
+            background-color: #f1a205; /* Amarelo/laranja ao passar o mouse */
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 3 colunas */
+            gap: 20px;
+            padding: 20px;
+        }
+        .grid-item {
+            background-color: #111; /* Fundo preto mais claro para os posts */
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .grid-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+        }
+        .grid-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        .grid-item h3 {
+            margin: 10px 0;
+            color: #f1a205; /* Laranja para os títulos */
+        }
+        footer {
+            background-color: #111;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <!-- Espaço para a logo -->
+        <img src="logo-placeholder.png" alt="Logo Botafogo">
+        <h1>Botafogo de Futebol e Regatas</h1>
+        <nav>
+            <a href="historia.html">História</a>
+            <a href="#conquistas">Conquistas</a>
+            <a href="#idolos">Ídolos</a>
+            <a href="#artigos">Artigos</a> <!-- Novo item de menu -->
+        </nav>
+    </header>
+
+    <div class="grid-container">
+        <!-- Matérias atualizadas -->
+        <div class="grid-item">
+            <img src="thumb-placeholder.jpg" alt="Matéria 1">
+            <h3>Matéria 1</h3>
+            <p>Conteúdo atualizado sobre o Botafogo.</p>
+        </div>
+        <div class="grid-item">
+            <img src="thumb-placeholder.jpg" alt="Matéria 2">
+            <h3>Matéria 2</h3>
+            <p>Novidades e análises sobre o clube.</p>
+        </div>
+        <div class="grid-item">
+            <img src="thumb-placeholder.jpg" alt="Matéria 3">
+            <h3>Matéria 3</h3>
+            <p>Últimas informações e artigos exclusivos.</p>
+        </div>
+
+        <!-- Seções fixas sobre o clube -->
+        <div class="grid-item">
+            <img src="thumb-placeholder.jpg" alt="História do Botafogo">
+            <h3>História do Botafogo</h3>
+            <p>Explore a rica história do Botafogo e seus momentos icônicos.</p>
+        </div>
+        <div class="grid-item">
+            <img src="thumb-placeholder.jpg" alt="Conquistas do Botafogo">
+            <h3>Conquistas do Botafogo</h3>
+            <p>Veja as grandes vitórias e os troféus que o Botafogo já conquistou.</p>
+        </div>
+        <div class="grid-item">
+            <img src="thumb-placeholder.jpg" alt="Ídolos do Botafogo">
+            <h3>Ídolos do Botafogo</h3>
+            <p>Descubra os craques que marcaram a história do clube.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Botafogo de Futebol e Regatas. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>
