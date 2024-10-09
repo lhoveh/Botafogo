@@ -277,6 +277,27 @@
     position: relative; /* Para posicionar o botão de fechar */
     color: #333; /* Cor do texto mais clara para melhor legibilidade */
 }
+/* Estilo do conteúdo do modal */
+.modal-content {
+    background-color: #f0f0f0;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 600px;
+    position: relative;
+    color: #333;
+    
+    /* Novas propriedades para rolagem */
+    max-height: 80vh; /* Define uma altura máxima em relação à viewport */
+    overflow-y: auto; /* Permite a rolagem vertical */
+}
+
+/* Quando o modal estiver aberto, desabilitar a rolagem da página */
+body.modal-open {
+    overflow: hidden;
+}
+
 
 /* Estilo do botão de fechar */
 #close-btn {
@@ -374,14 +395,21 @@ nav.menu-interno a:hover {
                     <h2 class="h2-indice">Índice</h2>
                     <div class="menu">
                         <nav class="menu-interno">
-                            <a href="#club-de-regatas-botafogo">Clube de Regatas Botafogo</a>
-                            <a href="#botafogo-football-club">Botafogo Football Club</a>
-                            <a href="#tetracampeonato">Tetracampeonato</a>
-                            <a href="#decada-de-40">Década de 40</a>
-                            <a href="#club-de-regatas-botafogo">Clube de Regatas Botafogo</a>
-                            <a href="#botafogo-football-club">Botafogo Football Club</a>
-                            <a href="#tetracampeonato">Tetracampeonato</a>
-                            <a href="#decada-de-40">Década de 40</a>
+                            <a href="#Clube de regatas">Clube de regatas</a>
+                            <a href="#Clube de futebol">Clube de futebol</a>
+                            <a href="#Tetracampeonato">Tetracampeonato</a>
+                            <a href="#Década de 40">Década de 40</a>
+                            <a href="#Décadas apoteóticas">Décadas apoteóticas</a>
+                            <a href="#O jejum de 21 anos">O jejum de 21 anos</a>
+                            <a href="#Fim do jejum">Fim do jejum</a>
+                            <a href="#Os anos 90">Os anos 90</a>
+                            <a href="Bebeto de Freitas">Bebeto de Freitas</a>
+            <a href="#Carrosel Alvinegro">Carrosel Alvinegro</a>
+            <a href="#Seedorf">Época do Seedofr</a>
+            <a href="#Libertadores">Libertadores</a>
+            <a href="Gestão Durcésio Mello">Gestão Durcésio Mello</a>
+            <a href="#SAF">SAF Botafogo</a>
+
                         </nav>
                     </div>
 
@@ -572,30 +600,37 @@ nav.menu-interno a:hover {
     <script>
         // Função para aplicar a transição de fade
         window.onload = function () {
-            document.body.style.opacity = "1"; // Define a opacidade do corpo para 1 ao carregar
-        };
+    document.body.style.opacity = "1"; // Define a opacidade do corpo para 1 ao carregar
+};
 
-        // Obtém os elementos
-        const modal = document.getElementById("modal");
-        const indice = document.getElementById("indice");
-        const closeBtn = document.getElementById("close-btn");
+// Obtém os elementos
+const modal = document.getElementById("modal");
+const indice = document.getElementById("indice");
+const closeBtn = document.getElementById("close-btn");
 
-        // Abre o modal ao clicar no item do índice
-        indice.onclick = function () {
-            modal.style.display = "block";
-        }
+// Função para abrir o modal
+indice.onclick = function () {
+    modal.style.display = "block";   // Exibe o modal
+    document.body.classList.add("modal-open"); // Adiciona a classe para desabilitar a rolagem da página de fundo
+}
 
-        // Fecha o modal ao clicar no "x"
-        closeBtn.onclick = function () {
-            modal.style.display = "none";
-        }
+// Função para fechar o modal
+function fecharModal() {
+    modal.style.display = "none";    // Oculta o modal
+    document.body.classList.remove("modal-open"); // Remove a classe para habilitar a rolagem da página de fundo
+}
 
-        // Fecha o modal ao clicar fora do conteúdo
-        window.onclick = function (event) {
-            if (event.target === modal) {
-                modal.style.display = "none";
-            }
-        }
+// Fecha o modal ao clicar no "x"
+closeBtn.onclick = function () {
+    fecharModal(); 
+}
+
+// Fecha o modal ao clicar fora do conteúdo
+window.onclick = function (event) {
+    if (event.target === modal) {
+        fecharModal();
+    }
+}
 
     </script>
 </body>

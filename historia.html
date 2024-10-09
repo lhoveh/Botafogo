@@ -2,14 +2,10 @@
 <html lang="pt-BR">
 
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1">
-
     <title>Botafogo de Futebol e Regatas - História</title>
-
     <link rel="stylesheet" href="styles.css"> <!-- Arquivo de estilos externo, se aplicável -->
-
     <style>
         body {
             background-color: #000;
@@ -21,6 +17,8 @@
             padding: 0;
             transition: opacity 0.5s ease;
             /* Transição suave */
+            opacity: 0;
+            /* Inicia com opacidade 0 para efeito de fade */
         }
 
         html,
@@ -32,7 +30,6 @@
             padding: 0;
         }
 
-        /* Cabeçalho */
         header {
             background-color: #000;
             padding: 20px;
@@ -40,9 +37,9 @@
             border-bottom: 3px solid #fff;
         }
 
-        header img {     /* logo */
+        header img {
             max-width: 150px;
-        
+            /* Espaço para a logo */
             display: block;
             margin: 0 auto;
         }
@@ -67,19 +64,55 @@
             /* Amarelo/laranja ao passar o mouse */
         }
 
-        nav.interno{
-            display: flex;
-            /* flex-wrap: wrap; */
-            justify-content: center;
-           
+        nav.menu-interno a {
+            color: black;
+            /* Cor dos links */
+            text-decoration: none;
+            /* Remove sublinhado */
+            background-color: #333;
+            /* Cor de fundo cinza escuro */
+            padding: 10px 15px;
+            /* Espaçamento interno dos links */
+            margin: 5px 0;
+            /* Margem entre os itens para separação */
+            width: 100%;
+            /* Faz com que os links ocupem toda a largura disponível */
+            border: 1px solid transparent;
+            /* Borda invisível para separação */
+            border-radius: 5px;
+            /* Bordas arredondadas */
+            transition: background-color 0.3s;
+            /* Transição suave ao passar o mouse */
         }
 
-        /* Container principal centralizado */
+        /* Efeito ao passar o mouse */
+        nav.menu-interno a:hover {
+            background-color: #444;
+            /* Um cinza mais claro ao passar o mouse */
+        }
+
+
+        .menu a {
+            text-decoration: none;
+            padding: 10px 15px;
+            /* Espaçamento interno dos itens */
+            background-color: #f0f0f0;
+            /* Cor de fundo */
+            border-radius: 5px;
+            /* Bordas arredondadas */
+            transition: background-color 0.3s;
+            /* Transição suave */
+            width: 90%;
+        }
+
+        .menu a:hover {
+            background-color: #dcdcdc;
+            /* Cor ao passar o mouse */
+        }
+
         .container {
-            /* display: flex;
-            justify-content: center; */
-            margin: 0 auto; /* Centraliza a container horizontalmente */
-    text-align: center; /* Centraliza o texto e conteúdo interno */
+            display: flex;
+            justify-content: center;
             padding: 40px 20px;
             /* Ajusta a posição para não sobrepor o header */
             background-color: #111;
@@ -95,10 +128,8 @@
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
             color: #fff;
-            margin: auto;
         }
 
-        /* Título em laranja */
         .content h1 {
             text-align: center;
             font-size: 32px;
@@ -107,68 +138,71 @@
             /* Cor laranja */
         }
 
-        /* Subtítulos */
-        .content h2 {
-            font-size: 28px;
+        .content h2,
+        .content h3 {
             color: #f1a205;
-            /* Cor laranja para subtítulos */
+            /* Cor laranja */
             margin-top: 30px;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
             border-bottom: 2px solid #f1a205;
             padding-bottom: 5px;
+            /* text-align: center; */
+        }
+
+        .content h2 {
+            font-size: 28px;
         }
 
         .content h3 {
             font-size: 24px;
-            /* Tamanho da fonte para h3 */
-            color: #f1a205;
-            /* Cor laranja para h3 */
-            margin-top: 20px;
-            /* Espaço acima do h3 */
-            margin-bottom: 10px;
-            /* Espaço abaixo do h3 */
-            border-bottom: 1px solid #f1a205;
-            /* Linha abaixo do h3 */
-            padding-bottom: 5px;
-            /* Espaço interno abaixo do texto */
         }
 
-        /* Imagens alinhadas no texto */
-        /* Imagem alinhada à direita */
         .content img {
-            width: 320px;
-            /* Tamanho fixo em pixels */
+            width: 100%;
+            /* Tornar a imagem responsiva */
+            max-width: 320px;
+            /* Tamanho máximo */
             height: auto;
             margin: 0 15px 15px 0;
-            float: left;
             border-radius: 8px;
+            float: left;
         }
 
         .content img.right {
             float: right;
-            width: 320px;
-            /* Tamanho fixo */
-            margin: 0px 15px 0px 15px;
+            margin: 0 0 15px 15px;
         }
 
-
-
-        /* Parágrafos */
         .content p {
             font-size: 18px;
             line-height: 1.6;
             margin-bottom: 20px;
-            text-align: justify; /* Justifica o texto nos parágrafos */
         }
 
-        /* Limpa o float */
         .content:after {
             content: "";
             display: table;
             clear: both;
         }
 
-        /* Rodapé */
+        div.indice {
+            width: 10%;
+            display: flex;
+            text-align: center;
+            align-items: center;
+            color: #f1a205;
+            justify-content: center;
+            font-size: 32px;
+        }
+
+        div.titulo {
+            width: 90%;
+        }
+
+        div.barratitulo {
+            display: flex;
+        }
+
         footer {
             background-color: #111;
             color: #fff;
@@ -176,235 +210,254 @@
             padding: 10px 0;
             margin-top: 40px;
         }
-        .menu-icon {
-    /* position: absolute; */
-    top: 20px;
-    left: 20px;
-    cursor: pointer;
-    font-size: 24px;
-}
 
+        /* modal */
+        .indice {
+            cursor: pointer;
+            /* Muda o cursor para indicar que é clicável */
+            font-size: 32px;
+            color: #f1a205;
+            margin: 20px;
+            /* Margem para afastar do canto */
+        }
+
+        .close {
+            color: #aaa;
+            /* Cor do botão de fechar */
+            float: right;
+            /* Alinha à direita */
+            font-size: 28px;
+            /* Tamanho do botão de fechar */
+            font-weight: bold;
+            /* Negrito */
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #f1a205;
+            /* Cor ao passar o mouse */
+            text-decoration: none;
+            /* Remove sublinhado */
+            cursor: pointer;
+            /* Muda o cursor */
+        }
+
+/* Estilo do modal */
 .modal {
-    display: none; /* Escondido por padrão */
-    position: fixed; /* Fixa a posição */
-    z-index: 1; /* Fica na frente */
+    display: none; /* Mantém o modal invisível inicialmente */
+    position: fixed; /* Fica fixo na tela */
+    z-index: 1000; /* Para garantir que o modal fique acima de outros elementos */
     left: 0;
     top: 0;
-    width: 100%; /* Largura total da tela */
-    height: 100%; /* Altura total da tela */
-    overflow: auto; /* Permite rolagem se necessário */
-    background-color: rgba(0, 0, 0, 0.7); /* Fundo escuro com transparência */
+    width: 100%; /* Ocupa toda a largura da tela */
+    height: 100%; /* Ocupa toda a altura da tela */
+    background-color: rgba(255, 255, 255, 0.9); /* Fundo branco semi-transparente */
 }
 
+/* Estilo do modal */
+.modal {
+    display: none; /* Mantém o modal invisível inicialmente */
+    position: fixed; /* Fica fixo na tela */
+    z-index: 1000; /* Para garantir que o modal fique acima de outros elementos */
+    left: 0;
+    top: 0;
+    width: 100%; /* Ocupa toda a largura da tela */
+    height: 100%; /* Ocupa toda a altura da tela */
+    background-color: rgba(255, 255, 255, 0.9); /* Fundo branco semi-transparente */
+}
+
+/* Estilo do conteúdo do modal */
 .modal-content {
-    background-color: #fff;
-    margin: 15% auto; /* Centraliza verticalmente */
+    background-color: #f0f0f0; /* Fundo do modal mais claro */
+    margin: 10% auto; /* Centraliza verticalmente */
     padding: 20px;
-    border: 1px solid #888;
-    width: 80%; /* Largura da janela modal */
-    max-width: 500px; /* Largura máxima */
-    border-radius: 10px; /* Borda arredondada */
+    border-radius: 10px; /* Bordas arredondadas */
+    width: 80%; /* Largura do modal */
+    max-width: 600px; /* Largura máxima do modal */
+    position: relative; /* Para posicionar o botão de fechar */
+    color: #333; /* Cor do texto mais clara para melhor legibilidade */
+}
+/* Estilo do conteúdo do modal */
+.modal-content {
+    background-color: #f0f0f0;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 600px;
+    position: relative;
+    color: #333;
+    
+    /* Novas propriedades para rolagem */
+    max-height: 80vh; /* Define uma altura máxima em relação à viewport */
+    overflow-y: auto; /* Permite a rolagem vertical */
 }
 
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
+/* Quando o modal estiver aberto, desabilitar a rolagem da página */
+body.modal-open {
+    overflow: hidden;
 }
 
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
+
+/* Estilo do botão de fechar */
+#close-btn {
+    position: absolute; /* Para ficar no canto superior direito */
+    top: 10px; /* Distância do topo */
+    right: 10px; /* Distância da direita */
+    font-size: 24px; /* Tamanho do ícone */
+    color: black; /* Azul escuro para o botão de fechar */
+    cursor: pointer; /* Muda o cursor ao passar o mouse */
+    transition: color 0.3s; /* Transição suave ao passar o mouse */
 }
+
+/* Efeito ao passar o mouse no botão de fechar */
+#close-btn:hover {
+    color: #000408; /* Azul mais escuro ao passar o mouse */
+}
+
+/* Estilo do título do índice */
+h2.h2-indice {
+    text-align: center; /* Centraliza o título */
+    color: black; /* Cor do título mais clara */
+    border-bottom: 2px solid black;
+}
+
+/* Estilo do menu interno */
+.menu {
+    width: 100%; /* Ocupa toda a largura */
+    margin-top: 20px; /* Espaço acima do menu */
+}
+
+nav.menu-interno {
+    display: flex; /* Mantém os itens em linha */
+    flex-direction: column; /* Empilha os itens verticalmente */
+    align-items: center; /* Centraliza os itens horizontalmente */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margens */
+    width: 100%; /* Garante que o menu ocupe toda a largura */
+}
+
+/* Estilo dos links do menu interno */
+nav.menu-interno a {
+    color: #333; /* Cor dos links em um tom escuro */
+    text-decoration: none; /* Remove sublinhado */
+    background-color: #e9ecef; /* Um cinza bem claro para o fundo dos links */
+    padding: 10px 15px; /* Espaçamento interno */
+    margin: 5px 0; /* Margem entre os itens para separação */
+    width: 100%; /* Faz com que os links ocupem toda a largura */
+    border-radius: 5px; /* Bordas arredondadas */
+    transition: background-color 0.3s; /* Transição suave ao passar o mouse */
+}
+
+/* Efeito ao passar o mouse nos links */
+nav.menu-interno a:hover {
+    background-color: #d3d3d3; /* Um cinza mais escuro ao passar o mouse */
+}
+
     </style>
-    <script>
-        // Função para aplicar a transição de fade
-        window.onload = function () {
-            document.body.style.opacity = "1"; // Define a opacidade do corpo para 1 ao carregar
-        };
 
-// Obtém os elementos
-const modal = document.getElementById("modal");
-const menuIcon = document.getElementById("menu-icon");
-const closeButton = document.getElementById("close");
-
-// Quando o usuário clica no ícone do menu, abre o modal
-menuIcon.onclick = function() {
-    modal.style.display = "block";
-}
-
-// Quando o usuário clica no botão de fechar, fecha o modal
-closeButton.onclick = function() {
-    modal.style.display = "none";
-}
-
-// Quando o usuário clica em qualquer lugar fora do modal, fecha o modal
-window.onclick = function(event) {
-    if (event.target === modal) {
-        modal.style.display = "none";
-    }
-}
-
-    </script>
 </head>
 
-<body style="opacity: 0;"> <!-- Inicia com opacidade 0 para efeito de fade -->
+<body>
 
-    <!-- Cabeçalho padrão -->
     <header>
-
         <a href="botafogo.html" style="text-decoration: none; color: #fff;">
-            <img src="botalogo.png" alt="Logo Botafogo"> <!-- Logo alterada para botalogo.png -->
+            <img src="botalogo.png" alt="Logo Botafogo">
         </a>
         <a href="botafogo.html" style="text-decoration: none; color: #fff;">
-            <h1>Botafogo de Futebol e Regatas</h1> <!-- Título agora é um link para botafogo.html -->
+            <h1>Botafogo de Futebol e Regatas</h1>
         </a>
-
         <nav>
             <a href="historia.html">História</a>
             <a href="#conquistas">Conquistas</a>
             <a href="#idolos">Ídolos</a>
             <a href="#artigos">Artigos</a>
         </nav>
+
     </header>
 
-    <!-- Conteúdo centralizado da página -->
-    
-<!-- <div>
-        <nav class="interno">
-            <a href="#Clube de regatas">História</a>
-            <a href="#Clube de futebol">Conquistas</a>
-            <a href="#Tetracampeonato">Ídolos</a>
-            <a href="#Década de 40">Artigos</a>
-        </nav>
-
-        <nav class="interno">
-            <a href="#Décadas apoteóticas">História</a>
-            <a href="#O jejum de 21 anos">Conquistas</a>
-            <a href="#Fim do jejum">Ídolos</a>
-            <a href="#Os anos 90">Artigos</a>
-        </nav>
-
-        <nav class="interno">
-            <a href="Bebeto de Freitas">História</a>
-            <a href="#Carrosel Alvinegro">Conquistas</a>
-            <a href="#Seedorf">Ídolos</a>
-            <a href="#Libertadores">Artigos</a>
-            </nav>
-
-            <nav class="interno">
-            <a href="Gestão Durcésio Mello">História</a>
-            <a href="#SAF">Conquistas</a>
-            </nav>
-
-        </nav> -->
-
-        <!-- experimento de modal-->
-    
-       
-    
-    <!-- <script src="script.js"></script> -->
-
-
-  
-
+    <div class="container">
         <div class="content">
-            <div class="container" id="modal-container"> <!--container do modal --> 
-   
-                <div class="modal" id="modal">
-                    <div class="modal-content">
-                        <span class="close" id="close">&times;</span>
-                        <h2>Índice</h2>
-                        <ul>
-                            <li><a href="#section1">Seção 1</a></li>
-                            <li><a href="#section2">Seção 2</a></li>
-                            <li><a href="#section3">Seção 3</a></li>
-                        </ul>
-                    </div>
-                    </div>
+
+            <div class="barratitulo"> <!-- barra do título-->
+
+                <div class="indice" id="indice">☰</div>
+                <div class="titulo">
+                    <h1>História do Botafogo</h1>
+                </div>
             </div>
-            <div class="menu-icon" id="menu-icon">☰</div>
-            <h1>História do Botafogo</h1>
-            <img src="galeao.jpg" alt="Galeão" /> <!-- Imagem galeão -->
-            <p>
-                A história do clube começa com a palavra "Botafogo", que era a alcunha do galeão da marinha portuguesa,
-                chamada de São João Batista.
-                O galeão recebeu esse nome devido ao seu imenso poder de ataque, com 366 bocas de fogo e canhões de
-                bronze.
-                Lançado ao mar no século XVI, o navio era um dos mais poderosos de sua época, se não o maior.
-            </p>
-            <p>
-                Ficou famoso por seu papel na conquista de Tunes, onde ajudou a romper as defesas do porto, quando
-                Carlos V solicitou apoio naval aos portugueses e requisitou especificamente o “Botafogo”.
-            </p>
-            <p>
-                Um dos membros da tripulação, o nobre João Pereira de Sousa, artilheiro do navio, acabou herdando o
+
+            <div id="modal" class="modal">
+
+                <div class="modal-content">
+
+                    <span class="close" id="close-btn">&times;</span>
+                    <h2 class="h2-indice">Índice</h2>
+                    <div class="menu">
+                        <nav class="menu-interno">
+                            <a href="#Clube de regatas">Clube de regatas</a>
+                            <a href="#Clube de futebol">Clube de futebol</a>
+                            <a href="#Tetracampeonato">Tetracampeonato</a>
+                            <a href="#Década de 40">Década de 40</a>
+                            <a href="#Décadas apoteóticas">Décadas apoteóticas</a>
+                            <a href="#O jejum de 21 anos">O jejum de 21 anos</a>
+                            <a href="#Fim do jejum">Fim do jejum</a>
+                            <a href="#Os anos 90">Os anos 90</a>
+                            <a href="Bebeto de Freitas">Bebeto de Freitas</a>
+            <a href="#Carrosel Alvinegro">Carrosel Alvinegro</a>
+            <a href="#Seedorf">Época do Seedofr</a>
+            <a href="#Libertadores">Libertadores</a>
+            <a href="Gestão Durcésio Mello">Gestão Durcésio Mello</a>
+            <a href="#SAF">SAF Botafogo</a>
+
+                        </nav>
+                    </div>
+
+                </div>
+
+            </div> <!-- fim do modal-->
+            <img src="galeao.jpg" alt="Galeão" />
+            <p>A história do clube começa com a palavra "Botafogo", que era a alcunha do galeão da marinha portuguesa,
+                chamada de São João Batista. O galeão recebeu esse nome devido ao seu imenso poder de ataque, com 366
+                bocas de fogo e canhões de bronze. Lançado ao mar no século XVI, o navio era um dos mais poderosos de
+                sua época, se não o maior.</p>
+            <p>Ficou famoso por seu papel na conquista de Tunes, onde ajudou a romper as defesas do porto, quando Carlos
+                V solicitou apoio naval aos portugueses e requisitou especificamente o “Botafogo”.</p>
+            <p>Um dos membros da tripulação, o nobre João Pereira de Sousa, artilheiro do navio, acabou herdando o
                 apelido de Botafogo. Ele depois se estabeleceria no Brasil e viria a lutar contra franceses e índios
                 Tupiniquins, recebendo como recompensa da coroa portuguesa terras na Baía de Guanabara, que, por isso,
-                passaram a ser conhecidas como terras do Botafogo.
-            </p>
-            <p>
-                Essas terras, mais tarde, herdariam o nome "Botafogo", em homenagem ao apelido do nobre. Assim, surgiu o
+                passaram a ser conhecidas como terras do Botafogo.</p>
+            <p>Essas terras, mais tarde, herdariam o nome "Botafogo", em homenagem ao apelido do nobre. Assim, surgiu o
                 bairro de Botafogo, que mais tarde daria nome ao Clube de Regatas Botafogo e ao Botafogo Futebol Clube.
             </p>
 
-            <h2 id="Clube de Regatas">Club de Regatas Botafogo</h2>
-            <p>
-                Fundado em 1° de julho de 1894, foi o primeiro clube carioca campeão brasileiro de remo. Seu foco eram
-                os esportes aquáticos.
-                Sua sede ficava na praia de Botafogo, e o clube se destacou com o barco Diva, que se tornou uma lenda
-                nas águas da Baía de Guanabara ao vencer todas as 22 regatas que disputou, sagrando o clube como campeão
-                carioca de 1899.
-            </p>
+            <h2>Clube de Regatas Botafogo</h2>
+            <p>Fundado em 1° de julho de 1894, foi o primeiro clube carioca campeão brasileiro de remo. Seu foco eram os
+                esportes aquáticos. Sua sede ficava na praia de Botafogo, e o clube se destacou com o barco Diva, que se
+                tornou uma lenda nas águas da Baía de Guanabara ao vencer todas as 22 regatas que disputou, sagrando o
+                clube como campeão carioca de 1899.</p>
 
-            <h2 id="Clube de Futebol">Botafogo Football Club</h2>
-
-            <p>
-                No ano de 1904, surgia no bairro de Botafogo um novo clube de futebol, o Electro Club. A associação
+            <h2>Botafogo Football Club</h2>
+            <p>No ano de 1904, surgia no bairro de Botafogo um novo clube de futebol, o Electro Club. A associação
                 nasceu a partir da ideia de Flávio Ramos e Emmanuel Sodré, que estudavam juntos no colégio Alfredo
-                Gomes.
-                Na tarde do dia 12 de agosto, Flávio, Emmanuel e outros colegas com idade entre 14 e 15 anos fundaram o
-                Electro Club, no chalé de um velho casarão em ruínas da rua Conselheiro Gonzaga, gentilmente cedido aos
-                garotos por Dona Chiquitota, avó materna de Flávio, que foi também quem sugeriu que mudassem o nome do
-                clube para Botafogo.
-            </p>
-
+                Gomes. Na tarde do dia 12 de agosto, Flávio, Emmanuel e outros colegas com idade entre 14 e 15 anos
+                fundaram o Electro Club, no chalé de um velho casarão em ruínas da rua Conselheiro Gonzaga, gentilmente
+                cedido aos garotos por Dona Chiquitota, avó materna de Flávio, que foi também quem sugeriu que mudassem
+                o nome do clube para Botafogo.</p>
             <p>Surgia então o Botafogo Football Club.</p>
 
-            <p>
-                Em 1907 conquistou seu 1º Campeonato Carioca. Em 1909 aplicou a maior goleada da história do futebol
-                brasileiro, um 24 a 0 sobre o Mangueira. Em 1910 conquistou novamente o Carioca, dessa vez de forma
-                avassaladora, marcando 66 gols em 10 jogos. A campanha histórica conferiu ao clube o apelido de O
-                Glorioso.
-            </p>
+            <p>Em 1907 conquistou seu 1º Campeonato Carioca. Em 1909 aplicou a maior goleada da história do futebol
+                brasileiro, um 24 a 0 contra o São Bento. O Botafogo foi tetracampeão carioca em 1910, 1912, 1913 e
+                1914.</p>
 
-            <p>
-                Após essa conquista, o clube iria em busca do bi em 1911, mas uma briga genralziada em uma partida
-                contra
-                o América mudaria o destino do clube. Um zagueiro do América deu uma entrada violenta em Flávio Ramos
-                (jogador e fundador do Botafogo), provocando uma pancadaria entre jogadores e até torecedores.
-            </p>
+            <h2>Tetracampeonato</h2>
+            <p>O tetracampeonato foi uma era dourada para o clube, consolidando o Botafogo como uma das potências do
+                futebol brasileiro. Com a base formada, o clube se destacou no cenário nacional e se tornou conhecido
+                por seu jogo bonito e pela habilidade de seus jogadores.</p>
 
-            <p>
-                A Liga Metropolitana de Esportes Atléticos decide punir dois jogadores do Botafogo (suspensões de 6 a 12
-                meses aproximadamente) e nenhum do América. Em protesto, então, o Botafogo abandona a liga e passa a se
-                ocupar com disputa de amistosos
-                apenas. No entanto, não disputar o Carioca afetou de forma grave as receitas do clube, fazendo com que o
-                clube vendesse sua primeira sede, na rua Voluntários da Pátria, no Largo dos Leões.
-            </p>
-
-
-            <h2 id="Tetracampeonato">Tetracampeonato</h2>
-            <p>
-                Nas décidas de 1910 e 1920 o clube viveu uma entressafra, e só voltaria a conquistar o Campeonato
-                Carioca na década de 30. No entanto, seu retorno ao topo foi triunfal, pois conquistaria o até hoje
-                inédito tetracampeonato carioca, com 4 títulos seguidos, em 32, 33, 34 e 35. Nessa última conquista, o
-                destaque do time foi Leônidas da Silva.
-            </p>
+            <h3>Destaques do Tetracampeonato</h3>
+            <p>Os grandes ídolos do tetracampeonato foram: *Friedrich*, *Félix*, *Leônidas*, *Canela*, *Pereira*, entre
+                outros, que eternizaram seus nomes na história do Botafogo e do futebol brasileiro.</p>
 
             <h2 id="Década de 40">Década de 40</h2>
             <p>
@@ -543,6 +596,43 @@ window.onclick = function(event) {
     <footer>
         <p>© 2024 Botafogo de Futebol e Regatas. Todos os direitos reservados.</p>
     </footer>
+
+    <script>
+        // Função para aplicar a transição de fade
+        window.onload = function () {
+    document.body.style.opacity = "1"; // Define a opacidade do corpo para 1 ao carregar
+};
+
+// Obtém os elementos
+const modal = document.getElementById("modal");
+const indice = document.getElementById("indice");
+const closeBtn = document.getElementById("close-btn");
+
+// Função para abrir o modal
+indice.onclick = function () {
+    modal.style.display = "block";   // Exibe o modal
+    document.body.classList.add("modal-open"); // Adiciona a classe para desabilitar a rolagem da página de fundo
+}
+
+// Função para fechar o modal
+function fecharModal() {
+    modal.style.display = "none";    // Oculta o modal
+    document.body.classList.remove("modal-open"); // Remove a classe para habilitar a rolagem da página de fundo
+}
+
+// Fecha o modal ao clicar no "x"
+closeBtn.onclick = function () {
+    fecharModal(); 
+}
+
+// Fecha o modal ao clicar fora do conteúdo
+window.onclick = function (event) {
+    if (event.target === modal) {
+        fecharModal();
+    }
+}
+
+    </script>
 </body>
 
 </html>
