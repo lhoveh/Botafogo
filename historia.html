@@ -67,10 +67,19 @@
             /* Amarelo/laranja ao passar o mouse */
         }
 
+        nav.interno{
+            display: flex;
+            /* flex-wrap: wrap; */
+            justify-content: center;
+           
+        }
+
         /* Container principal centralizado */
         .container {
-            display: flex;
-            justify-content: center;
+            /* display: flex;
+            justify-content: center; */
+            margin: 0 auto; /* Centraliza a container horizontalmente */
+    text-align: center; /* Centraliza o texto e conteúdo interno */
             padding: 40px 20px;
             /* Ajusta a posição para não sobrepor o header */
             background-color: #111;
@@ -86,6 +95,7 @@
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
             color: #fff;
+            margin: auto;
         }
 
         /* Título em laranja */
@@ -148,6 +158,7 @@
             font-size: 18px;
             line-height: 1.6;
             margin-bottom: 20px;
+            text-align: justify; /* Justifica o texto nos parágrafos */
         }
 
         /* Limpa o float */
@@ -165,12 +176,79 @@
             padding: 10px 0;
             margin-top: 40px;
         }
+        .menu-icon {
+    /* position: absolute; */
+    top: 20px;
+    left: 20px;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+.modal {
+    display: none; /* Escondido por padrão */
+    position: fixed; /* Fixa a posição */
+    z-index: 1; /* Fica na frente */
+    left: 0;
+    top: 0;
+    width: 100%; /* Largura total da tela */
+    height: 100%; /* Altura total da tela */
+    overflow: auto; /* Permite rolagem se necessário */
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo escuro com transparência */
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto; /* Centraliza verticalmente */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Largura da janela modal */
+    max-width: 500px; /* Largura máxima */
+    border-radius: 10px; /* Borda arredondada */
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
     </style>
     <script>
         // Função para aplicar a transição de fade
         window.onload = function () {
             document.body.style.opacity = "1"; // Define a opacidade do corpo para 1 ao carregar
         };
+
+// Obtém os elementos
+const modal = document.getElementById("modal");
+const menuIcon = document.getElementById("menu-icon");
+const closeButton = document.getElementById("close");
+
+// Quando o usuário clica no ícone do menu, abre o modal
+menuIcon.onclick = function() {
+    modal.style.display = "block";
+}
+
+// Quando o usuário clica no botão de fechar, fecha o modal
+closeButton.onclick = function() {
+    modal.style.display = "none";
+}
+
+// Quando o usuário clica em qualquer lugar fora do modal, fecha o modal
+window.onclick = function(event) {
+    if (event.target === modal) {
+        modal.style.display = "none";
+    }
+}
+
     </script>
 </head>
 
@@ -178,7 +256,7 @@
 
     <!-- Cabeçalho padrão -->
     <header>
-        
+
         <a href="botafogo.html" style="text-decoration: none; color: #fff;">
             <img src="botalogo.png" alt="Logo Botafogo"> <!-- Logo alterada para botalogo.png -->
         </a>
@@ -195,8 +273,61 @@
     </header>
 
     <!-- Conteúdo centralizado da página -->
-    <div class="container">
+    
+<!-- <div>
+        <nav class="interno">
+            <a href="#Clube de regatas">História</a>
+            <a href="#Clube de futebol">Conquistas</a>
+            <a href="#Tetracampeonato">Ídolos</a>
+            <a href="#Década de 40">Artigos</a>
+        </nav>
+
+        <nav class="interno">
+            <a href="#Décadas apoteóticas">História</a>
+            <a href="#O jejum de 21 anos">Conquistas</a>
+            <a href="#Fim do jejum">Ídolos</a>
+            <a href="#Os anos 90">Artigos</a>
+        </nav>
+
+        <nav class="interno">
+            <a href="Bebeto de Freitas">História</a>
+            <a href="#Carrosel Alvinegro">Conquistas</a>
+            <a href="#Seedorf">Ídolos</a>
+            <a href="#Libertadores">Artigos</a>
+            </nav>
+
+            <nav class="interno">
+            <a href="Gestão Durcésio Mello">História</a>
+            <a href="#SAF">Conquistas</a>
+            </nav>
+
+        </nav> -->
+
+        <!-- experimento de modal-->
+    
+       
+    
+    <!-- <script src="script.js"></script> -->
+
+
+  
+
         <div class="content">
+            <div class="container" id="modal-container"> <!--container do modal --> 
+   
+                <div class="modal" id="modal">
+                    <div class="modal-content">
+                        <span class="close" id="close">&times;</span>
+                        <h2>Índice</h2>
+                        <ul>
+                            <li><a href="#section1">Seção 1</a></li>
+                            <li><a href="#section2">Seção 2</a></li>
+                            <li><a href="#section3">Seção 3</a></li>
+                        </ul>
+                    </div>
+                    </div>
+            </div>
+            <div class="menu-icon" id="menu-icon">☰</div>
             <h1>História do Botafogo</h1>
             <img src="galeao.jpg" alt="Galeão" /> <!-- Imagem galeão -->
             <p>
@@ -221,7 +352,7 @@
                 bairro de Botafogo, que mais tarde daria nome ao Clube de Regatas Botafogo e ao Botafogo Futebol Clube.
             </p>
 
-            <h2>Club de Regatas Botafogo</h2>
+            <h2 id="Clube de Regatas">Club de Regatas Botafogo</h2>
             <p>
                 Fundado em 1° de julho de 1894, foi o primeiro clube carioca campeão brasileiro de remo. Seu foco eram
                 os esportes aquáticos.
@@ -230,7 +361,8 @@
                 carioca de 1899.
             </p>
 
-            <h2>Botafogo Football Club</h2>
+            <h2 id="Clube de Futebol">Botafogo Football Club</h2>
+
             <p>
                 No ano de 1904, surgia no bairro de Botafogo um novo clube de futebol, o Electro Club. A associação
                 nasceu a partir da ideia de Flávio Ramos e Emmanuel Sodré, que estudavam juntos no colégio Alfredo
@@ -240,6 +372,7 @@
                 garotos por Dona Chiquitota, avó materna de Flávio, que foi também quem sugeriu que mudassem o nome do
                 clube para Botafogo.
             </p>
+
             <p>Surgia então o Botafogo Football Club.</p>
 
             <p>
@@ -255,6 +388,7 @@
                 o América mudaria o destino do clube. Um zagueiro do América deu uma entrada violenta em Flávio Ramos
                 (jogador e fundador do Botafogo), provocando uma pancadaria entre jogadores e até torecedores.
             </p>
+
             <p>
                 A Liga Metropolitana de Esportes Atléticos decide punir dois jogadores do Botafogo (suspensões de 6 a 12
                 meses aproximadamente) e nenhum do América. Em protesto, então, o Botafogo abandona a liga e passa a se
@@ -264,7 +398,7 @@
             </p>
 
 
-            <h2>Tetracampeonato</h2>
+            <h2 id="Tetracampeonato">Tetracampeonato</h2>
             <p>
                 Nas décidas de 1910 e 1920 o clube viveu uma entressafra, e só voltaria a conquistar o Campeonato
                 Carioca na década de 30. No entanto, seu retorno ao topo foi triunfal, pois conquistaria o até hoje
@@ -272,7 +406,7 @@
                 destaque do time foi Leônidas da Silva.
             </p>
 
-            <h2>Década de 40</h2>
+            <h2 id="Década de 40">Década de 40</h2>
             <p>
                 Na década 40 houve a fusão entre o Club de Regatas Botafogo e o Botafogo Football Club, que ocorreu no
                 ano de 1942, após uma partida de basquete disputada entre os dois.
@@ -287,7 +421,9 @@
                 Envolvidos em uma profunda atmosfera de comoção, os dirigentes das duas agremiações optaram pela união
                 dos clubes. Nascia assim o Botafogo de Futebol e Regatas.
             </p>
+
             <h3>Heleno e Biriba</h3>
+
             <p>
                 <img src="Heleno.jpg" alt="Heleno" style="min-width: 16%; max-width: 220px;" class="right" />
                 <!-- Imagem Heleno -->
@@ -298,12 +434,13 @@
                 cercado
                 de dívidas.
             </p>
+
             <p>
                 Outro evento importante na década de 40 foi a composição do mais famoso hino do clube, obra criada pelo
                 compositor Lamartine Babo.
             </p>
 
-            <h2> O apogeu nas décadas de 50 e 60 </h2>
+            <h2 id="Décadas apoteóticas"> O apogeu nas décadas de 50 e 60 </h2>
             <p> O Botafogo atingiu seu auge nas décadas de 50, contando com muitos craques como Manga, Moreira,
                 Sebastião
                 Leônidas, Baltazar, Didi, Pampolini, Zagallo, Nílton Santos, Gérson, Carlos Roberto, Paulo César Caju,
@@ -322,6 +459,7 @@
             </p>
 
             <h3>Títulos</h3>
+
             <p>
                 O clube venceu seu primeiro Rio -Sao Paulo em 1962, ano em que se sagrou bicampeo carioca. Em 1964,
                 bicampeao do Rio-Sao Paulo. No final da década, ganhou 3 vezes o Triangular de Caracas, torneio bastante
@@ -332,13 +470,15 @@
             </p>
 
             <h3> As excursões </h3>
+
             <p>
                 O Botafogo investiu muito em excursões e torneios no exterior porque essas competições e amistosos eram
                 mais rentáveisdo do que as competições brasileiras e sulamericanas, como Libertadores e Taça Brasil.
                 Dessa forma, o clube focou menos em competições oficiais em favor de disputas mais lucrativas ao redor
                 do planeta. Trocou a chance de títulos por dinheiro, em bom português.
             </p>
-            <h2> 21 anos sem título </h2>
+
+            <h2 id="O jejum de 21 anos"> 21 anos sem título </h2>
 
             <p>
                 O ocaso do imprério alvinegro começou após a conquista de Taça Brasil em 1968/1969. Em 1971, mesmo com 4
@@ -392,7 +532,7 @@
                 perder, marca até hoje não superada.
             </p>
 
-            <h2>Década de 80</h2>
+            <h2 id="Fim do jejum">Título de 89</h2>
 
 
 

@@ -8,18 +8,24 @@
     <link rel="stylesheet" href="styles.css"> <!-- Arquivo de estilos externo, se aplicável -->
     <style>
         body {
-            background-color: #000; /* Fundo preto */
-            color: #fff; /* Texto branco */
+            background-color: #000;
+            /* Fundo preto */
+            color: #fff;
+            /* Texto branco */
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            transition: opacity 0.5s ease; /* Transição suave */
-            opacity: 0; /* Inicia com opacidade 0 para efeito de fade */
+            transition: opacity 0.5s ease;
+            /* Transição suave */
+            opacity: 0;
+            /* Inicia com opacidade 0 para efeito de fade */
         }
 
-        html, body {
+        html,
+        body {
             width: 100%;
-            overflow-x: hidden; /* Impede a rolagem lateral */
+            overflow-x: hidden;
+            /* Impede a rolagem lateral */
             margin: 0;
             padding: 0;
         }
@@ -32,40 +38,92 @@
         }
 
         header img {
-            max-width: 150px; /* Espaço para a logo */
+            max-width: 150px;
+            /* Espaço para a logo */
             display: block;
             margin: 0 auto;
         }
 
-        .menu nav {
-    display: flex;
-    flex-wrap: wrap; /* Permite que os itens quebrem para a linha seguinte */
-    gap: 15px; /* Espaçamento entre os itens */
-}
+        nav {
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+        }
 
-.menu a {
-    text-decoration: none;
-    padding: 10px 15px; /* Espaçamento interno dos itens */
-    background-color: #f0f0f0; /* Cor de fundo */
-    border-radius: 5px; /* Bordas arredondadas */
-    transition: background-color 0.3s; /* Transição suave */
-}
+        nav a {
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+            border-radius: 5px;
+        }
 
-.menu a:hover {
-    background-color: #dcdcdc; /* Cor ao passar o mouse */
-}
+        nav a:hover {
+            background-color: #f1a205;
+            /* Amarelo/laranja ao passar o mouse */
+        }
+
+        nav.menu-interno a {
+            color: black;
+            /* Cor dos links */
+            text-decoration: none;
+            /* Remove sublinhado */
+            background-color: #333;
+            /* Cor de fundo cinza escuro */
+            padding: 10px 15px;
+            /* Espaçamento interno dos links */
+            margin: 5px 0;
+            /* Margem entre os itens para separação */
+            width: 100%;
+            /* Faz com que os links ocupem toda a largura disponível */
+            border: 1px solid transparent;
+            /* Borda invisível para separação */
+            border-radius: 5px;
+            /* Bordas arredondadas */
+            transition: background-color 0.3s;
+            /* Transição suave ao passar o mouse */
+        }
+
+        /* Efeito ao passar o mouse */
+        nav.menu-interno a:hover {
+            background-color: #444;
+            /* Um cinza mais claro ao passar o mouse */
+        }
+
+
+        .menu a {
+            text-decoration: none;
+            padding: 10px 15px;
+            /* Espaçamento interno dos itens */
+            background-color: #f0f0f0;
+            /* Cor de fundo */
+            border-radius: 5px;
+            /* Bordas arredondadas */
+            transition: background-color 0.3s;
+            /* Transição suave */
+            width: 90%;
+        }
+
+        .menu a:hover {
+            background-color: #dcdcdc;
+            /* Cor ao passar o mouse */
+        }
 
         .container {
             display: flex;
             justify-content: center;
-            padding: 40px 20px; /* Ajusta a posição para não sobrepor o header */
-            background-color: #111; /* Fundo cinza escuro para manter o padrão das thumbs */
+            padding: 40px 20px;
+            /* Ajusta a posição para não sobrepor o header */
+            background-color: #111;
+            /* Fundo cinza escuro para manter o padrão das thumbs */
             max-width: 1200px;
         }
 
         .content {
             max-width: 900px;
-            background-color: #222; /* Fundo mais escuro no conteúdo */
+            background-color: #222;
+            /* Fundo mais escuro no conteúdo */
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
@@ -76,15 +134,19 @@
             text-align: center;
             font-size: 32px;
             margin-bottom: 20px;
-            color: #f1a205; /* Cor laranja */
+            color: #f1a205;
+            /* Cor laranja */
         }
 
-        .content h2, .content h3 {
-            color: #f1a205; /* Cor laranja */
+        .content h2,
+        .content h3 {
+            color: #f1a205;
+            /* Cor laranja */
             margin-top: 30px;
             margin-bottom: 10px;
             border-bottom: 2px solid #f1a205;
             padding-bottom: 5px;
+            /* text-align: center; */
         }
 
         .content h2 {
@@ -96,8 +158,10 @@
         }
 
         .content img {
-            width: 100%; /* Tornar a imagem responsiva */
-            max-width: 320px; /* Tamanho máximo */
+            width: 100%;
+            /* Tornar a imagem responsiva */
+            max-width: 320px;
+            /* Tamanho máximo */
             height: auto;
             margin: 0 15px 15px 0;
             border-radius: 8px;
@@ -121,6 +185,24 @@
             clear: both;
         }
 
+        div.indice {
+            width: 10%;
+            display: flex;
+            text-align: center;
+            align-items: center;
+            color: #f1a205;
+            justify-content: center;
+            font-size: 32px;
+        }
+
+        div.titulo {
+            width: 90%;
+        }
+
+        div.barratitulo {
+            display: flex;
+        }
+
         footer {
             background-color: #111;
             color: #fff;
@@ -128,13 +210,131 @@
             padding: 10px 0;
             margin-top: 40px;
         }
+
+        /* modal */
+        .indice {
+            cursor: pointer;
+            /* Muda o cursor para indicar que é clicável */
+            font-size: 32px;
+            color: #f1a205;
+            margin: 20px;
+            /* Margem para afastar do canto */
+        }
+
+        .close {
+            color: #aaa;
+            /* Cor do botão de fechar */
+            float: right;
+            /* Alinha à direita */
+            font-size: 28px;
+            /* Tamanho do botão de fechar */
+            font-weight: bold;
+            /* Negrito */
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #f1a205;
+            /* Cor ao passar o mouse */
+            text-decoration: none;
+            /* Remove sublinhado */
+            cursor: pointer;
+            /* Muda o cursor */
+        }
+
+/* Estilo do modal */
+.modal {
+    display: none; /* Mantém o modal invisível inicialmente */
+    position: fixed; /* Fica fixo na tela */
+    z-index: 1000; /* Para garantir que o modal fique acima de outros elementos */
+    left: 0;
+    top: 0;
+    width: 100%; /* Ocupa toda a largura da tela */
+    height: 100%; /* Ocupa toda a altura da tela */
+    background-color: rgba(255, 255, 255, 0.9); /* Fundo branco semi-transparente */
+}
+
+/* Estilo do modal */
+.modal {
+    display: none; /* Mantém o modal invisível inicialmente */
+    position: fixed; /* Fica fixo na tela */
+    z-index: 1000; /* Para garantir que o modal fique acima de outros elementos */
+    left: 0;
+    top: 0;
+    width: 100%; /* Ocupa toda a largura da tela */
+    height: 100%; /* Ocupa toda a altura da tela */
+    background-color: rgba(255, 255, 255, 0.9); /* Fundo branco semi-transparente */
+}
+
+/* Estilo do conteúdo do modal */
+.modal-content {
+    background-color: #f0f0f0; /* Fundo do modal mais claro */
+    margin: 10% auto; /* Centraliza verticalmente */
+    padding: 20px;
+    border-radius: 10px; /* Bordas arredondadas */
+    width: 80%; /* Largura do modal */
+    max-width: 600px; /* Largura máxima do modal */
+    position: relative; /* Para posicionar o botão de fechar */
+    color: #333; /* Cor do texto mais clara para melhor legibilidade */
+}
+
+/* Estilo do botão de fechar */
+#close-btn {
+    position: absolute; /* Para ficar no canto superior direito */
+    top: 10px; /* Distância do topo */
+    right: 10px; /* Distância da direita */
+    font-size: 24px; /* Tamanho do ícone */
+    color: black; /* Azul escuro para o botão de fechar */
+    cursor: pointer; /* Muda o cursor ao passar o mouse */
+    transition: color 0.3s; /* Transição suave ao passar o mouse */
+}
+
+/* Efeito ao passar o mouse no botão de fechar */
+#close-btn:hover {
+    color: #000408; /* Azul mais escuro ao passar o mouse */
+}
+
+/* Estilo do título do índice */
+h2.h2-indice {
+    text-align: center; /* Centraliza o título */
+    color: black; /* Cor do título mais clara */
+    border-bottom: 2px solid black;
+}
+
+/* Estilo do menu interno */
+.menu {
+    width: 100%; /* Ocupa toda a largura */
+    margin-top: 20px; /* Espaço acima do menu */
+}
+
+nav.menu-interno {
+    display: flex; /* Mantém os itens em linha */
+    flex-direction: column; /* Empilha os itens verticalmente */
+    align-items: center; /* Centraliza os itens horizontalmente */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margens */
+    width: 100%; /* Garante que o menu ocupe toda a largura */
+}
+
+/* Estilo dos links do menu interno */
+nav.menu-interno a {
+    color: #333; /* Cor dos links em um tom escuro */
+    text-decoration: none; /* Remove sublinhado */
+    background-color: #e9ecef; /* Um cinza bem claro para o fundo dos links */
+    padding: 10px 15px; /* Espaçamento interno */
+    margin: 5px 0; /* Margem entre os itens para separação */
+    width: 100%; /* Faz com que os links ocupem toda a largura */
+    border-radius: 5px; /* Bordas arredondadas */
+    transition: background-color 0.3s; /* Transição suave ao passar o mouse */
+}
+
+/* Efeito ao passar o mouse nos links */
+nav.menu-interno a:hover {
+    background-color: #d3d3d3; /* Um cinza mais escuro ao passar o mouse */
+}
+
     </style>
-    <script>
-        // Função para aplicar a transição de fade
-        window.onload = function () {
-            document.body.style.opacity = "1"; // Define a opacidade do corpo para 1 ao carregar
-        };
-    </script>
+
 </head>
 
 <body>
@@ -146,47 +346,258 @@
         <a href="botafogo.html" style="text-decoration: none; color: #fff;">
             <h1>Botafogo de Futebol e Regatas</h1>
         </a>
-        <div class="menu">
-            <nav>
-                <a href="#club-de-regatas-botafogo">Clube de Regatas Botafogo</a>
-                <a href="#botafogo-football-club">Botafogo Football Club</a>
-                <a href="#tetracampeonato">Tetracampeonato</a>
-                <a href="#decada-de-40">Década de 40</a>
-                <a href="#club-de-regatas-botafogo">Clube de Regatas Botafogo</a>
-                <a href="#botafogo-football-club">Botafogo Football Club</a>
-                <a href="#tetracampeonato">Tetracampeonato</a>
-                <a href="#decada-de-40">Década de 40</a>
-            </nav>
-        </div>
-        
+        <nav>
+            <a href="historia.html">História</a>
+            <a href="#conquistas">Conquistas</a>
+            <a href="#idolos">Ídolos</a>
+            <a href="#artigos">Artigos</a>
+        </nav>
+
     </header>
 
     <div class="container">
         <div class="content">
-            <h1>História do Botafogo</h1>
+
+            <div class="barratitulo"> <!-- barra do título-->
+
+                <div class="indice" id="indice">☰</div>
+                <div class="titulo">
+                    <h1>História do Botafogo</h1>
+                </div>
+            </div>
+
+            <div id="modal" class="modal">
+
+                <div class="modal-content">
+
+                    <span class="close" id="close-btn">&times;</span>
+                    <h2 class="h2-indice">Índice</h2>
+                    <div class="menu">
+                        <nav class="menu-interno">
+                            <a href="#club-de-regatas-botafogo">Clube de Regatas Botafogo</a>
+                            <a href="#botafogo-football-club">Botafogo Football Club</a>
+                            <a href="#tetracampeonato">Tetracampeonato</a>
+                            <a href="#decada-de-40">Década de 40</a>
+                            <a href="#club-de-regatas-botafogo">Clube de Regatas Botafogo</a>
+                            <a href="#botafogo-football-club">Botafogo Football Club</a>
+                            <a href="#tetracampeonato">Tetracampeonato</a>
+                            <a href="#decada-de-40">Década de 40</a>
+                        </nav>
+                    </div>
+
+                </div>
+
+            </div> <!-- fim do modal-->
             <img src="galeao.jpg" alt="Galeão" />
-            <p>A história do clube começa com a palavra "Botafogo", que era a alcunha do galeão da marinha portuguesa, chamada de São João Batista. O galeão recebeu esse nome devido ao seu imenso poder de ataque, com 366 bocas de fogo e canhões de bronze. Lançado ao mar no século XVI, o navio era um dos mais poderosos de sua época, se não o maior.</p>
-            <p>Ficou famoso por seu papel na conquista de Tunes, onde ajudou a romper as defesas do porto, quando Carlos V solicitou apoio naval aos portugueses e requisitou especificamente o “Botafogo”.</p>
-            <p>Um dos membros da tripulação, o nobre João Pereira de Sousa, artilheiro do navio, acabou herdando o apelido de Botafogo. Ele depois se estabeleceria no Brasil e viria a lutar contra franceses e índios Tupiniquins, recebendo como recompensa da coroa portuguesa terras na Baía de Guanabara, que, por isso, passaram a ser conhecidas como terras do Botafogo.</p>
-            <p>Essas terras, mais tarde, herdariam o nome "Botafogo", em homenagem ao apelido do nobre. Assim, surgiu o bairro de Botafogo, que mais tarde daria nome ao Clube de Regatas Botafogo e ao Botafogo Futebol Clube.</p>
+            <p>A história do clube começa com a palavra "Botafogo", que era a alcunha do galeão da marinha portuguesa,
+                chamada de São João Batista. O galeão recebeu esse nome devido ao seu imenso poder de ataque, com 366
+                bocas de fogo e canhões de bronze. Lançado ao mar no século XVI, o navio era um dos mais poderosos de
+                sua época, se não o maior.</p>
+            <p>Ficou famoso por seu papel na conquista de Tunes, onde ajudou a romper as defesas do porto, quando Carlos
+                V solicitou apoio naval aos portugueses e requisitou especificamente o “Botafogo”.</p>
+            <p>Um dos membros da tripulação, o nobre João Pereira de Sousa, artilheiro do navio, acabou herdando o
+                apelido de Botafogo. Ele depois se estabeleceria no Brasil e viria a lutar contra franceses e índios
+                Tupiniquins, recebendo como recompensa da coroa portuguesa terras na Baía de Guanabara, que, por isso,
+                passaram a ser conhecidas como terras do Botafogo.</p>
+            <p>Essas terras, mais tarde, herdariam o nome "Botafogo", em homenagem ao apelido do nobre. Assim, surgiu o
+                bairro de Botafogo, que mais tarde daria nome ao Clube de Regatas Botafogo e ao Botafogo Futebol Clube.
+            </p>
 
             <h2>Clube de Regatas Botafogo</h2>
-            <p>Fundado em 1° de julho de 1894, foi o primeiro clube carioca campeão brasileiro de remo. Seu foco eram os esportes aquáticos. Sua sede ficava na praia de Botafogo, e o clube se destacou com o barco Diva, que se tornou uma lenda nas águas da Baía de Guanabara ao vencer todas as 22 regatas que disputou, sagrando o clube como campeão carioca de 1899.</p>
+            <p>Fundado em 1° de julho de 1894, foi o primeiro clube carioca campeão brasileiro de remo. Seu foco eram os
+                esportes aquáticos. Sua sede ficava na praia de Botafogo, e o clube se destacou com o barco Diva, que se
+                tornou uma lenda nas águas da Baía de Guanabara ao vencer todas as 22 regatas que disputou, sagrando o
+                clube como campeão carioca de 1899.</p>
 
             <h2>Botafogo Football Club</h2>
-            <p>No ano de 1904, surgia no bairro de Botafogo um novo clube de futebol, o Electro Club. A associação nasceu a partir da ideia de Flávio Ramos e Emmanuel Sodré, que estudavam juntos no colégio Alfredo Gomes. Na tarde do dia 12 de agosto, Flávio, Emmanuel e outros colegas com idade entre 14 e 15 anos fundaram o Electro Club, no chalé de um velho casarão em ruínas da rua Conselheiro Gonzaga, gentilmente cedido aos garotos por Dona Chiquitota, avó materna de Flávio, que foi também quem sugeriu que mudassem o nome do clube para Botafogo.</p>
+            <p>No ano de 1904, surgia no bairro de Botafogo um novo clube de futebol, o Electro Club. A associação
+                nasceu a partir da ideia de Flávio Ramos e Emmanuel Sodré, que estudavam juntos no colégio Alfredo
+                Gomes. Na tarde do dia 12 de agosto, Flávio, Emmanuel e outros colegas com idade entre 14 e 15 anos
+                fundaram o Electro Club, no chalé de um velho casarão em ruínas da rua Conselheiro Gonzaga, gentilmente
+                cedido aos garotos por Dona Chiquitota, avó materna de Flávio, que foi também quem sugeriu que mudassem
+                o nome do clube para Botafogo.</p>
             <p>Surgia então o Botafogo Football Club.</p>
-            
-            <p>Em 1907 conquistou seu 1º Campeonato Carioca. Em 1909 aplicou a maior goleada da história do futebol brasileiro, um 24 a 0 contra o São Bento. O Botafogo foi tetracampeão carioca em 1910, 1912, 1913 e 1914.</p>
+
+            <p>Em 1907 conquistou seu 1º Campeonato Carioca. Em 1909 aplicou a maior goleada da história do futebol
+                brasileiro, um 24 a 0 contra o São Bento. O Botafogo foi tetracampeão carioca em 1910, 1912, 1913 e
+                1914.</p>
 
             <h2>Tetracampeonato</h2>
-            <p>O tetracampeonato foi uma era dourada para o clube, consolidando o Botafogo como uma das potências do futebol brasileiro. Com a base formada, o clube se destacou no cenário nacional e se tornou conhecido por seu jogo bonito e pela habilidade de seus jogadores.</p>
+            <p>O tetracampeonato foi uma era dourada para o clube, consolidando o Botafogo como uma das potências do
+                futebol brasileiro. Com a base formada, o clube se destacou no cenário nacional e se tornou conhecido
+                por seu jogo bonito e pela habilidade de seus jogadores.</p>
 
             <h3>Destaques do Tetracampeonato</h3>
-            <p>Os grandes ídolos do tetracampeonato foram: *Friedrich*, *Félix*, *Leônidas*, *Canela*, *Pereira*, entre outros, que eternizaram seus nomes na história do Botafogo e do futebol brasileiro.</p>
+            <p>Os grandes ídolos do tetracampeonato foram: *Friedrich*, *Félix*, *Leônidas*, *Canela*, *Pereira*, entre
+                outros, que eternizaram seus nomes na história do Botafogo e do futebol brasileiro.</p>
 
-            <h2>DÉCADA DE 40</h2>
-            <p>Na década de 40, o Botafogo alcançou novos patamares, consolidando-se como um dos maiores clubes do Brasil e do mundo. Com uma geração de jogadores excepcionais, como *Nilton Santos*, *Garrincha*, *Quarentinha* e *Jairzinho*, o clube conquistou diversos títulos nacionais e internacionais, incluindo o título de campeão carioca em 1943, 1944 e 1948.</p>
-            <img src="heleno.jpg" alt="Heleno" class="right" />
-            <p>Heleno de Freitas foi um dos grandes ídolos da equipe durante esse período e é considerado um dos maiores atacantes da história do futebol. Sua habilidade, técnica e faro de gol deixaram uma marca indelével na história do clube.</p>
-            <p>Além do sucesso em campo, a década de 40 foi marcada por uma grande torcida, que se apaixonou pelo estilo de jogo do Botafogo e pela
+            <h2 id="Década de 40">Década de 40</h2>
+            <p>
+                Na década 40 houve a fusão entre o Club de Regatas Botafogo e o Botafogo Football Club, que ocorreu no
+                ano de 1942, após uma partida de basquete disputada entre os dois.
+
+            <p> Nesse dia o jogador Albano, um dos principais jogadores do Botafogo Football Club e da Seleção
+                Brasileira, saiu atrasado do trabalho e chegou à quadra com o jogo já em andamento.
+                Durante o intervalo, Armando se abaixou para pegar uma bola e caiu desfalecido na quadra. Prontamente o
+                jogador foi levado ao vestiário e a partida recomeçou. Porém, após alguns minutos tentando trazê-lo de
+                volta à vida, a notícia de sua morte interrompeu o confronto.
+            </p>
+            <p>
+                Envolvidos em uma profunda atmosfera de comoção, os dirigentes das duas agremiações optaram pela união
+                dos clubes. Nascia assim o Botafogo de Futebol e Regatas.
+            </p>
+
+            <h3>Heleno e Biriba</h3>
+
+            <p>
+                <img src="Heleno.jpg" alt="Heleno" style="min-width: 16%; max-width: 220px;" class="right" />
+                <!-- Imagem Heleno -->
+                A década de 40 foi curiosa para o clube, pois foi rica em vários sentidos, mas vazia de títulos. O clube
+                contou com Heleno de Freitas, o maior ídolo do clube na era pré-Garrincha, mas só voltaria a
+                ser campeão após a sua saída, em 1948, quando se sagrou campeão carioca. Heleno fora vendido para o Boca
+                Juniors, para que o Botafogo resolvesse suas questões financeiras, já que mais uma vez o clube se via
+                cercado
+                de dívidas.
+            </p>
+
+            <p>
+                Outro evento importante na década de 40 foi a composição do mais famoso hino do clube, obra criada pelo
+                compositor Lamartine Babo.
+            </p>
+
+            <h2 id="Décadas apoteóticas"> O apogeu nas décadas de 50 e 60 </h2>
+            <p> O Botafogo atingiu seu auge nas décadas de 50, contando com muitos craques como Manga, Moreira,
+                Sebastião
+                Leônidas, Baltazar, Didi, Pampolini, Zagallo, Nílton Santos, Gérson, Carlos Roberto, Paulo César Caju,
+                Rogério, Paulo Valentim, Ferreti, Afonsinho, Amarildo, Jairzinho, Quarentinha e Garrincha.
+            </p>
+            <p>
+                Em 58 cede três jogadores para o time titular do Brasil campeão do mundo na Suécia, sendo eles
+                Garrincha,
+                Nílton Santos e Didi, eleito o melhor jogador da Copa.
+            </p>
+            <p>
+                No ano de 62, cedou cinco jogadores para o time titular da seleção brasileira bicampeã do mundo; os 5
+                incluídos na seleção dos melhores do mundo: Nílton Santos, Didi, Zagallo, Garrincha e Amarildo.
+                Garrincha
+                foi até o único jogador a ser campeão, melhor jogador e artilheiro de uma Copa do Mundo.
+            </p>
+
+            <h3>Títulos</h3>
+
+            <p>
+                O clube venceu seu primeiro Rio -Sao Paulo em 1962, ano em que se sagrou bicampeo carioca. Em 1964,
+                bicampeao do Rio-Sao Paulo. No final da década, ganhou 3 vezes o Triangular de Caracas, torneio bastante
+                prestigiado na época, superando adversários como o Barcelona, Peñarol, e Benfica.
+                Foi também no final da década de 60 que o Botaofog, agora comandado pelo seu ex-jogador Zagallo,
+                conquistou
+                mais um bicampeonato cacrioca, e seu primeiro campeonato brasileiro, na época chamado de Taça Brasil.
+            </p>
+
+            <h3> As excursões </h3>
+
+            <p>
+                O Botafogo investiu muito em excursões e torneios no exterior porque essas competições e amistosos eram
+                mais rentáveisdo do que as competições brasileiras e sulamericanas, como Libertadores e Taça Brasil.
+                Dessa forma, o clube focou menos em competições oficiais em favor de disputas mais lucrativas ao redor
+                do planeta. Trocou a chance de títulos por dinheiro, em bom português.
+            </p>
+
+            <h2 id="O jejum de 21 anos"> 21 anos sem título </h2>
+
+            <p>
+                O ocaso do imprério alvinegro começou após a conquista de Taça Brasil em 1968/1969. Em 1971, mesmo com 4
+                tricampeões no elenco, Carlos Alberto Torres, Brito, Paulo César Caju e Jairzinho, e e após dominar boa
+                parte do Carioca, o Botafogo tropeçou e ficou o vice. No recém criado Campeonato Brasileiro, o time
+                chegou ao triangular final com São Paulo e Atlético Mineiro, mas não conseguiu abocanhar o título.
+
+            </p>
+            <p>
+                O Botafogo ainda bateu na trave no ano seguinte, chegando também à final do Brasileiro de 72, edição em
+                que aplicou uma goleada de 6 a 0 no rival Flamengo; mas perdeu a final para o Palmeiras.
+                No ano seguinte, o clube ainda se vingaria, elimando o próprio Palmeiras na Libertadores, mas sem
+                conseguir avançar à final.
+            </p>
+
+            <h3>A crise financeira</h3>
+            <p>
+                Em 1976 o clube atingiu o auge dos seus problemas financeiros e vendeu a sua sede, em General Severiano,
+                para a Vale do Rio Doce. Isso ocorreu durante a gestão do presidente Charles Macedo Borer, e o clube
+                passaria a jogar
+                em Marechal Hermes a partir de então.
+                Charles Borer tinha ligação com o SNI e governo militar, logo era um adversário político do ilustre
+                jornalista e treinador botafoguense João Saldanha, que era comunista. Foi odiado pela torcidada por ter
+                vendido a sede a uma
+                estatal do governo militar, e disse na época “que pouco importava a torcida”.
+            </P>
+            <p> Ele foi presidente do Botafogo em dois mandatos (1976-1978/1979-1981). Além da venda da sede, desfez-se
+                dos grandes jogadores, mesmo tendo os sócios levantado dinheiro suficiente para que ao menos a sede não
+                fosse
+                vendida. Borer demonstrava não ter interesse pelo futebol, e foi motivo de muitos protestos por parte
+                dos torcedores, que chegaram a invadir o campo com um caixão para simbolizar a morte do dirigente.
+            </P>
+
+            <h3>Time do Camburão</h3>
+
+            <p>
+                Além da venda da sede, jogadores e dívidas, Borer deixou um legado interessante: o Time do Camburão de
+                1977, que contava com Paulo César Caju, Mário Sérgio, Dé Aranha, Manfrini, Búfalo Gil, Perivaldo,
+                Ubirajara, Renê Pancada, Nilson Dias, Carbone, ademir vicente e Rodrigues Neto.
+            </p>
+
+            <p>
+
+                Era um time boêmio que não gostava de treinar cedo e desafiava o próprio presidente. Mário Sérgio e Renê
+                gostavam de brincar de atirar em placas de trânsito. Paulo César Caju não costumava jogar às
+                quintas-feiras
+                pois às quartas havia noites especiais na então famosa Boate Regine`s. PC Show. O time acabou ficando
+                marcado pela malandragem excessiva, não conquistou títulos e foi vendido peça por peça ao longo da
+                década. Ainda assim,
+                deixou um recorde até hoje na história do futebol brasileiro: a equipe logrou ficar 52 partidas sem
+                perder, marca até hoje não superada.
+            </p>
+
+            <h2 id="Fim do jejum">Título de 89</h2>
+
+
+
+        </div>
+    </div>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>© 2024 Botafogo de Futebol e Regatas. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        // Função para aplicar a transição de fade
+        window.onload = function () {
+            document.body.style.opacity = "1"; // Define a opacidade do corpo para 1 ao carregar
+        };
+
+        // Obtém os elementos
+        const modal = document.getElementById("modal");
+        const indice = document.getElementById("indice");
+        const closeBtn = document.getElementById("close-btn");
+
+        // Abre o modal ao clicar no item do índice
+        indice.onclick = function () {
+            modal.style.display = "block";
+        }
+
+        // Fecha o modal ao clicar no "x"
+        closeBtn.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        // Fecha o modal ao clicar fora do conteúdo
+        window.onclick = function (event) {
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        }
+
+    </script>
+</body>
+
+</html>
