@@ -1,34 +1,46 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Botafogo de Futebol e Regatas</title>
     <link rel="stylesheet" href="styles.css"> <!-- Arquivo de estilos -->
     <style>
-        body {
-            background-color: #000; /* Fundo preto */
-            color: #fff; /* Texto branco */
+        body,
+        html {
+            background-color: #000;
+            /* Fundo preto */
+            color: #fff;
+            /* Texto branco */
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
+            width: 100%;
         }
+
         header {
-            background-color: #000; /* Preto no header */
+            background-color: #000;
+            /* Preto no header */
             padding: 20px;
             text-align: center;
             border-bottom: 3px solid #fff;
         }
+
         header img {
-            max-width: 150px; /* Espaço para a logo */
+            max-width: 150px;
+            /* Espaço para a logo */
             display: block;
             margin: 0 auto;
         }
+
         nav {
             display: flex;
             justify-content: center;
             padding: 10px 0;
+            width: 100%;
         }
+
         nav a {
             color: #fff;
             padding: 10px 20px;
@@ -37,36 +49,92 @@
             transition: background-color 0.3s;
             border-radius: 5px;
         }
+
         nav a:hover {
-            background-color: #f1a205; /* Amarelo/laranja ao passar o mouse */
+            background-color: #f1a205;
+            /* Amarelo/laranja ao passar o mouse */
         }
+
         .grid-container {
             display: grid;
-            grid-template-columns: repeat(3, 1fr); /* 3 colunas */
+            grid-template-columns: repeat(3, 1fr);
+            /* 3 colunas */
             gap: 20px;
             padding: 20px;
+            max-width: 1000px;
+            margin: auto;
         }
+
+        a.thumb {
+            text-decoration: none;
+            /* Remove sublinhado */
+            color: inherit;
+            /* Herda a cor do pai */
+            /* display: block; */
+            /* Garante que o link abranja toda a div */
+        }
+
+        a.thumb:hover, a.thumb:focus {
+  text-decoration: none; /* Mantém sem sublinhado ao passar o mouse ou focar */
+  color: inherit; /* Mantém a cor original no hover ou focus */
+}
+
+        @media (max-width: 450px) {
+
+            .grid-container {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                /* 3 colunas */
+                gap: 20px;
+                padding: 20px;
+            }
+
+            nav a {
+                color: #fff;
+                padding: 10px 10px;
+                text-decoration: none;
+                font-weight: bold;
+                transition: background-color 0.3s;
+                border-radius: 5px;
+                font-size: 80%;
+
+            }
+
+            h1 {
+                font-size: 26px;
+            }
+
+        }
+
+
+
         .grid-item {
-            background-color: #111; /* Fundo preto mais claro para os posts */
+            background-color: #111;
+            /* Fundo preto mais claro para os posts */
             padding: 15px;
             border-radius: 10px;
             text-align: center;
             transition: transform 0.3s, box-shadow 0.3s;
         }
+
         .grid-item:hover {
             transform: scale(1.05);
             box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
         }
+
         .grid-item img {
             width: 100%;
             height: auto;
             border-radius: 5px;
             margin-bottom: 10px;
         }
+
         .grid-item h3 {
             margin: 10px 0;
-            color: #f1a205; /* Laranja para os títulos */
+            color: #f1a205;
+            /* Laranja para os títulos */
         }
+
         footer {
             background-color: #111;
             color: #fff;
@@ -76,6 +144,7 @@
         }
     </style>
 </head>
+
 <body>
 
     <header>
@@ -86,44 +155,47 @@
             <a href="historia.html">História</a>
             <a href="#conquistas">Conquistas</a>
             <a href="#idolos">Ídolos</a>
-            <a href="#artigos">Artigos</a> <!-- Novo item de menu -->
+            <a href="#artigos">Artigos</a>
         </nav>
     </header>
 
     <div class="grid-container">
         <!-- Matérias atualizadas -->
-        <div class="grid-item">
-            <img src="thumb-placeholder.jpg" alt="Matéria 1">
-            <h3>Matéria 1</h3>
-            <p>Conteúdo atualizado sobre o Botafogo.</p>
-        </div>
-        <div class="grid-item">
-            <img src="thumb-placeholder.jpg" alt="Matéria 2">
-            <h3>Matéria 2</h3>
-            <p>Novidades e análises sobre o clube.</p>
-        </div>
-        <div class="grid-item">
-            <img src="thumb-placeholder.jpg" alt="Matéria 3">
-            <h3>Matéria 3</h3>
-            <p>Últimas informações e artigos exclusivos.</p>
-        </div>
+        <a href="historia.html" class="thumb">
+            <div class="grid-item">
+      
+        <img src="galeao.jpg" alt="Matéria 1">
+        <h3>História do Clube</h3>
+        <p>Um breve olhar sobre a estrada dos louros iniciada em 1894 </p>
+    </div>
+</a>
+    <div class="grid-item">
+        <img src="thumb-placeholder.jpg" alt="Matéria 2">
+        <h3>Matéria 2</h3>
+        <p>Novidades e análises sobre o clube.</p>
+    </div>
+    <div class="grid-item">
+        <img src="thumb-placeholder.jpg" alt="Matéria 3">
+        <h3>Matéria 3</h3>
+        <p>Últimas informações e artigos exclusivos.</p>
+    </div>
 
-        <!-- Seções fixas sobre o clube -->
-        <div class="grid-item">
-            <img src="thumb-placeholder.jpg" alt="História do Botafogo">
-            <h3>História do Botafogo</h3>
-            <p>Explore a rica história do Botafogo e seus momentos icônicos.</p>
-        </div>
-        <div class="grid-item">
-            <img src="thumb-placeholder.jpg" alt="Conquistas do Botafogo">
-            <h3>Conquistas do Botafogo</h3>
-            <p>Veja as grandes vitórias e os troféus que o Botafogo já conquistou.</p>
-        </div>
-        <div class="grid-item">
-            <img src="thumb-placeholder.jpg" alt="Ídolos do Botafogo">
-            <h3>Ídolos do Botafogo</h3>
-            <p>Descubra os craques que marcaram a história do clube.</p>
-        </div>
+    <!-- Seções fixas sobre o clube -->
+    <div class="grid-item">
+        <img src="thumb-placeholder.jpg" alt="História do Botafogo">
+        <h3>História do Botafogo</h3>
+        <p>Explore a rica história do Botafogo e seus momentos icônicos.</p>
+    </div>
+    <div class="grid-item">
+        <img src="thumb-placeholder.jpg" alt="Conquistas do Botafogo">
+        <h3>Conquistas do Botafogo</h3>
+        <p>Veja as grandes vitórias e os troféus que o Botafogo já conquistou.</p>
+    </div>
+    <div class="grid-item">
+        <img src="thumb-placeholder.jpg" alt="Ídolos do Botafogo">
+        <h3>Ídolos do Botafogo</h3>
+        <p>Descubra os craques que marcaram a história do clube.</p>
+    </div>
     </div>
 
     <footer>
@@ -131,4 +203,5 @@
     </footer>
 
 </body>
+
 </html>
